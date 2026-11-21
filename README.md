@@ -15,6 +15,9 @@
 | 在 DeepSeek、Qwen 等聊天界面测试 | [聊天提示词教程](docs/chat-prompt-guide.md) |
 | 在自建应用中配置 system 消息 | [API 教程](docs/api-guide.md) |
 | 在 Ollama 中创建自定义模型 | [Ollama 教程](docs/ollama-guide.md) |
+| 按模型找到具体文件和使用入口 | [模型使用索引](docs/model-usage-index.md) |
+| Codex 接入 MiMo 后如何配置 | [Codex + MiMo 指南](docs/codex-mimo-guide.md) |
+| 了解原始样本审查进度 | [来源审查规范](docs/source-audit.md) |
 | 判断提示词是否真的有效 | [效果验证方法](research/evaluation.md) |
 | 理解所谓“破甲”的原理与边界 | [机制分析](research/mechanisms.md) |
 | 查看历史样本的来源与署名 | [来源说明](CREDITS.md) |
