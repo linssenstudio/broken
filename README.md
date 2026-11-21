@@ -1,69 +1,104 @@
-# Linssen AI Prompt Lab
+<div align="center">
 
-> 大模型提示词、Agent 指令配置与提示词注入机制研究 | Maintained by **Linssen Studio**
+# Linssen AI Prompt Collection
 
-本项目把不同模型的提示词样本整理成**可阅读、可配置、可验证**的研究资料库。你可以学习 `AGENTS.md`、聊天窗口、自定义指令、API system 消息及 Ollama Modelfile 的区别，并使用可重复的测试方法验证实际效果。
+**模型提示词合集 · 直接复制使用 · 中文配置教程**
 
-**注意：** 本仓库的历史提示词样本源于 [togg53192-cmd/jailbreaks](https://github.com/togg53192-cmd/jailbreaks) 的派生项目。Linssen Studio 负责新增的中文教程、分类说明和研究方法。历史样本不应视为 Linssen 原创，也不代表所有提示词已经验证有效。参见 [CREDITS.md](CREDITS.md)。
+Maintained by **Linssen Studio**
 
-## 快速导航
+[快速开始](#快速开始) · [提示词目录](#提示词目录) · [使用教程](#使用教程) · [来源与署名](CREDITS.md)
 
-| 想做什么 | 从这里开始 |
-|---|---|
-| 第一次使用仓库 | [新手入门](docs/getting-started.md) |
-| 给 Codex 等编程 Agent 配置项目规范 | [AGENTS.md 教程](docs/agents-md-guide.md) |
-| 在 DeepSeek、Qwen 等聊天界面测试 | [聊天提示词教程](docs/chat-prompt-guide.md) |
-| 在自建应用中配置 system 消息 | [API 教程](docs/api-guide.md) |
-| 在 Ollama 中创建自定义模型 | [Ollama 教程](docs/ollama-guide.md) |
-| 按模型找到具体文件和使用入口 | [模型使用索引](docs/model-usage-index.md) |
-| Codex 接入 MiMo 后如何配置 | [Codex + MiMo 指南](docs/codex-mimo-guide.md) |
-| 了解原始样本审查进度 | [来源审查规范](docs/source-audit.md) |
-| 判断提示词是否真的有效 | [效果验证方法](research/evaluation.md) |
-| 理解所谓“破甲”的原理与边界 | [机制分析](research/mechanisms.md) |
-| 查看历史样本的来源与署名 | [来源说明](CREDITS.md) |
-
-## 现有样本索引
-
-以下为仓库原有的模型分类目录，保留原路径，避免破坏已有链接。**文件名称中的模型版本不等于官方兼容性认证。**
-
-| 分类 | 文件夹 |
-|---|---|
-| DeepSeek | [DeepSeek](DeepSeek/) |
-| Qwen / Alibaba | [Alibaba](Alibaba/) |
-| Kimi | [Moonshot AI](Moonshot%20AI/) |
-| MiMo | [Xiaomi](Xiaomi/) |
-| Claude | [Anthropic](Anthropic/) |
-| GLM | [Zhipu AI](Zhipu%20AI/) |
-| Gemini / Gemma | [Google](Google/) |
-| GPT-OSS | [OpenAI](OpenAI/) |
-| Grok | [xAI](xAI/) |
-| Mistral | [Mistral](Mistral/) |
-| 其他模型 | [Stealth Models](Stealth%20Models/) |
-
-## 三分钟上手
-
-1. 先确认你用的是**网页聊天、编程 Agent、API 还是 Ollama**。
-2. 在对应目录选择一个样本，先阅读完整内容，不要盲目执行其中的命令或工具调用。
-3. 按照上面的教程选择正确的加载入口。
-4. 先在测试项目中验证，不要直接覆盖生产项目的指令文件。
-5. 用相同的测试问题对比配置前后的行为，记录模型版本、日期和结果。
-
-## 重要概念
-
-- **用户消息 ≠ 系统消息。** 在聊天窗口粘贴一段声称具有系统权限的文字，不会真正提升其权限。
-- **AGENTS.md ≠ 通用模型后门。** 只有支持该规范的 Agent 才会按其发现规则加载文件。
-- **Modelfile ≠ 微调。** 它配置模型运行方式，不会修改模型权重。
-- **提示词有效 ≠ 成功越狱。** 必须排除模型原本就能完成该任务的情况。
-
-## 维护与贡献
-
-欢迎提交清晰标注来源的提示词样本、兼容性报告和教程修正。请提供：目标模型、版本、客户端、配置入口、测试日期、基线与对照结果。不要提交 API 密钥、个人信息或未经授权获取的系统提示词。
-
-## 研究与使用声明
-
-本项目用于提示词工程、Agent 配置与模型安全研究。历史样本可能包含试图覆盖规则或压制拒绝的文本，**不代表这些指令拥有真实权限或被本项目认可**。请在授权环境中测试，不要将其用于未授权访问、侵害他人或违反适用法律及服务条款的行为。
+</div>
 
 ---
 
-**Linssen Studio · Documentation & Research**  
-Original collection attribution: [togg53192-cmd/jailbreaks](https://github.com/togg53192-cmd/jailbreaks)
+## 项目介绍
+
+这里集中保存不同大模型、编程 Agent 和本地模型的提示词样本。**原始提示词文件保持不变**，直接进入对应文件页面复制全文即可。
+
+本仓库基于 [togg53192-cmd/jailbreaks](https://github.com/togg53192-cmd/jailbreaks) 派生。Linssen Studio 编写中文导航和操作教程；原始提示词及历史贡献仍归相应作者。参见 [来源说明](CREDITS.md)。
+
+## 快速开始
+
+1. 在下方**提示词目录**选择你使用的模型。
+2. 点击对应文件，打开 GitHub 文件页面，使用右上角 **Raw** 或复制按钮获取原文。
+3. 根据文件类型选择使用入口：**聊天窗口 / AGENTS.md / API system 配置 / Ollama Modelfile**。
+4. 按下方教程操作即可。**无需安装整个仓库，也无需先做评测。**
+
+> 文件名中的模型版本和“系统级”描述不等于官方兼容性或实际权限。复制到普通聊天窗口的内容仍是用户消息，能否生效取决于模型与客户端。
+
+## 提示词目录
+
+| 模型 / 厂商 | 打开原始文件目录 |
+|---|---|
+| DeepSeek | [DeepSeek](DeepSeek/) |
+| Qwen / Alibaba | [Alibaba](Alibaba/) |
+| Kimi / Moonshot | [Moonshot AI](Moonshot%20AI/) |
+| MiMo / Xiaomi | [Xiaomi](Xiaomi/) |
+| Claude / Anthropic | [Anthropic](Anthropic/) |
+| GLM / Zhipu | [Zhipu AI](Zhipu%20AI/) |
+| Gemini / Gemma / Google | [Google](Google/) |
+| GPT-OSS / OpenAI | [OpenAI](OpenAI/) |
+| Grok / xAI | [xAI](xAI/) |
+| Mistral | [Mistral](Mistral/) |
+| Meta | [Meta](Meta/) |
+| StepFun | [StepFun](StepFun/) |
+| Meituan | [Meituan](Meituan/) |
+| Stealth Models | [Stealth Models](Stealth%20Models/) |
+| 其他样本 | [0x8D jailbreaks](0x8D%20jailbreaks/) |
+
+### 常用文件直达
+
+| 文件 | 入口类型 |
+|---|---|
+| [MiMo V2.6](Xiaomi/mimo-2.6-agents.md) | Agent 工作规范样本 |
+| [Kimi K3](Moonshot%20AI/kimi-k3-agents.md) | Workspace 指令样本 |
+| [GLM ZCode 5.3 AGENTS.md](Zhipu%20AI/glm-zcode-5.3-AGENTS.md) | AGENTS.md 样本 |
+| [DeepSeek V3](DeepSeek/deepseek%20v3.md) | System Prompt 样本 |
+| [Gemma 4](Google/gemma4.md) | Ollama Modelfile |
+| [GPT-OSS 20B](OpenAI/gpt-oss-20b.md) | Ollama Modelfile |
+
+## 使用教程
+
+| 使用环境 | 操作说明 |
+|---|---|
+| 网页聊天：DeepSeek、Qwen 等 | [复制到聊天窗口](docs/chat-prompt-guide.md) |
+| Codex 等支持 AGENTS.md 的编程 Agent | [AGENTS.md 放置教程](docs/agents-md-guide.md) |
+| Codex + MiMo | [配置说明](docs/codex-mimo-guide.md) |
+| 自己开发的 API 应用 | [System Prompt 配置](docs/api-guide.md) |
+| 本地 Ollama | [Modelfile 使用教程](docs/ollama-guide.md) |
+| 第一次使用 | [新手入门](docs/getting-started.md) |
+
+### 对话窗口
+
+打开文件 → 复制全文 → 粘贴到新对话中。该内容按**用户消息**处理，不会自动变成 system 消息。
+
+### AGENTS.md
+
+对于支持此文件的编程 Agent，在目标项目根目录创建 `AGENTS.md`，将选定内容保存进去，再从项目中启动 Agent。不同工具的加载规则不同，具体见 [教程](docs/agents-md-guide.md)。
+
+### API
+
+在自己控制的 API 应用中，把适用的提示词放入服务商支持的系统指令字段。不要把网页聊天框误认为系统配置入口。
+
+### Ollama
+
+只有符合 Ollama Modelfile 语法的文件才能直接用于 `ollama create`。例如：
+
+```bash
+ollama create linssen-local -f Modelfile
+ollama run linssen-local
+```
+
+其中 `Modelfile` 是你准备好的有效配置文件路径；必须确认其中的基础模型已存在。参见 [完整教程](docs/ollama-guide.md)。
+
+## 使用说明
+
+本项目是资料集合，并非一键破解工具。原始样本中的权限声明只是文本，不会改变真实授权或平台规则。请勿在提示词中加入 API 密钥或个人敏感信息；遵守适用法律、模型平台条款及授权范围。
+
+## Credits
+
+**Linssen Studio** — 中文首页、导航及教程维护。  
+**Original collection** — [togg53192-cmd/jailbreaks](https://github.com/togg53192-cmd/jailbreaks)。
+
+保留原始文件、历史提交与来源记录，不将第三方作品冒称为 Linssen 原创。
